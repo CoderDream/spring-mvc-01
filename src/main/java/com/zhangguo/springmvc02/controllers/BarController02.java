@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 //BarController类的实例是一个控制器，会自动添加到Spring上下文中
 @Controller
-public class BarController {
+public class BarController02 {
 	//映射访问路径
 	@RequestMapping("/bar")
 	public String index(Model model){

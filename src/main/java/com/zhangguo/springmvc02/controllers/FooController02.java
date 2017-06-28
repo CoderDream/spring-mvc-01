@@ -9,7 +9,7 @@ import org.springframework.web.servlet.mvc.Controller;
 /*
  * 定义控制器
  */
-public class FooController implements Controller {
+public class FooController02 implements Controller {
 
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {

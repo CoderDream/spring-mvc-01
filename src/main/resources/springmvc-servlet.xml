@@ -35,5 +35,5 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 
-	<bean name="/foo" class="com.zhangguo.springmvc02.controllers.FooController"></bean>
+	<bean name="/foo" class="com.zhangguo.springmvc02.controllers.FooController02"></bean>
 </beans>
