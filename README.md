@@ -1,4 +1,8 @@
-# spring-mvc-01
+
+
+Spring MVC 学习总结（一）——MVC概要与环境配置
+----------
+http://www.cnblogs.com/best/p/5653916.html
 
 两种方式启动和访问
 
