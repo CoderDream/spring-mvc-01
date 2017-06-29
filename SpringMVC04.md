@@ -59,7 +59,6 @@ Spring MVC 学习总结（四）——视图与综合示例
 
 | 标签        | 描述           |
 |:-------------:|:-------------| 
-| col 3 is      | right-aligned |
 |form|渲染表单元素form|
 |input|渲染\<input type=”text”/>元素|
 |password|渲染\<input type=”password”/>元素|
@@ -76,11 +75,13 @@ Spring MVC 学习总结（四）——视图与综合示例
 
 ### 1.2、常用属性 ###
 
-1. path:要绑定的属性路径，最重要的属性，多个元素必填，相当于 modelAttribute.getXXX() 。
-1. cssClass:定义要应用到被渲染元素的CSS类，类样式。
-1. cssStyle:定义要应用到被渲染元素的CSS样式，行内样式。 
-1. htmlEscape:接受true或者false，表示是否应该对被渲染的值进行HTML转义。 
-1. cssErrorClass:定义要应用到被渲染input元素的CSS类，如果bound属性中包含错误，则覆盖cssClass属性值。
+| 属性名        | 描述           |
+|:-------------:|:-------------| 
+|path|要绑定的属性路径，最重要的属性，多个元素必填，相当于 modelAttribute.getXXX() 。|
+|cssClass|定义要应用到被渲染元素的CSS类，类样式。|
+|cssStyle|定义要应用到被渲染元素的CSS样式，行内样式。 |
+|htmlEscape|接受true或者false，表示是否应该对被渲染的值进行HTML转义。 |
+|cssErrorClass|定义要应用到被渲染input元素的CSS类，如果bound属性中包含错误，则覆盖cssClass属性值。|
 
 ###1.3、form标签与input标签 ###
 
