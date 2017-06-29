@@ -548,6 +548,8 @@ hibernate-validator，Apache BVal等。这里我们使用hibernate-validator实�
 
 ### 2.5、测试运行 ###
 
+![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_05_0201.png)
+
 
 小结：从上面的示例可以看出这种验证更加方便直观，一次定义反复使用，以编辑更新时验证同样可以使用；另外验证的具体信息可以存放在配置文件中，如message.properties，这样便于国际化与修改。
 
@@ -634,8 +636,6 @@ jquery.validate是基于jQuery的一个B/S客户端验证插件，借助jQuery�
 
 增加了一个类型为CommonsMultipartResolver类型的解析器，各属性的意义：
 
-
-
 - defaultEncoding：默认编码格式
 
 - maxUploadSize：上传文件最大限制（字节byte）
@@ -692,9 +692,7 @@ jquery.validate是基于jQuery的一个B/S客户端验证插件，借助jQuery�
 
 #### 4.1.5、测试运行 ####
 
-
-
-
+![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_05_file01.png)
 
 
  ### 4.2、Servlet3.0以上文件上传 ###
@@ -867,4 +865,6 @@ multiple="multiple"这个属性是HTML5新增加的属性，一些旧版的浏�
 
 #### 4.2.6、测试运行 ####
 
+![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_05_file03.png)
 
+![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_05_file04.png)
