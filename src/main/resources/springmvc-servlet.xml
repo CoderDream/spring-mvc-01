@@ -97,6 +97,7 @@
 	</bean>
 
 	<!--文件上传解析器 -->
+	<!--Spring MVC默认不能识别multipart格式的文件内容 -->
 	<bean id="multipartResolver"
 		class="org.springframework.web.multipart.support.StandardServletMultipartResolver">
 	</bean>

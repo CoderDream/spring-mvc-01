@@ -13,8 +13,8 @@ import com.zhangguo.springmvc51.services.ProductService02;
 import com.zhangguo.springmvc51.services.ProductTypeService02;
 
 @Controller
-@RequestMapping("/goods")
-public class GoodsController {
+@RequestMapping("/goods05")
+public class GoodsController05 {
 	@Autowired
 	ProductService02 productService;
 	@Autowired
