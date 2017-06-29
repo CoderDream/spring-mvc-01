@@ -57,12 +57,8 @@ Spring MVC 学习总结（四）——视图与综合示例
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 以下表格展示了标签库中的常用标签：
 
-
-
-
-
 | 标签        | 描述           |
-|:-------------:|:-------------:| 
+|:-------------:|:-------------| 
 | col 3 is      | right-aligned |
 |form|渲染表单元素form|
 |input|渲染\<input type=”text”/>元素|
@@ -170,10 +166,9 @@ form表单与模型中名称为product的对象进行绑定，form中的表单�
 
  运行结果：
 
-
+![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_04_action11.png)
 
 模型可以为空，不是为null，中间可以没有数据，但非字符类型会取默认值，如价格会变成0.0。model.addAttribute("product", new Product())，结果如下：
-
 
 
 input元素可以设置其它的属性，如前面提到的通用属性，修改后的表单如下：
@@ -255,7 +250,6 @@ form:checkbox元素将渲染成一个复选框，通过该元素可以获得3种
         return person;
     }
 
-
 在views/bar目录下添加action21视图，视图脚本如下：
 
 	<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
@@ -323,7 +317,9 @@ form:checkbox元素将渲染成一个复选框，通过该元素可以获得3种
 	
 运行结果：
 
+![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_04_action21.png)
 
+![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_04_action22.png)
 
 form:checkbox在渲染成input标签里会变成2个表单元素，这样可以确保用户没有选择内容时也会将值带会服务器，默认是没有这样的。
 
@@ -334,7 +330,6 @@ form:checkbox在渲染成input标签里会变成2个表单元素，这样可以�
 第二种用法：若绑定值是Array（数组）类型或java.util.Collection，则配置的setValue(Object)值出现在绑定的Collection中时，input(checkbox)标为checked（选中）。
 
 第三种用法：若绑定值为其他类型，则当配置的setValue(Object)等于其绑定值时，input(checkbox)标为checked（选中）。 
-
 
 ### 1.5、radiobutton标签 ###
 
@@ -405,6 +400,10 @@ form:checkbox在渲染成input标签里会变成2个表单元素，这样可以�
 	</html>
 
 运行结果：
+
+![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_04_action31.png)
+
+![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_04_action32.png)
 
 ### 1.6、password标签 ###
 
@@ -541,6 +540,9 @@ form:checkbox在渲染成input标签里会变成2个表单元素，这样可以�
 
 运行结果：
 
+![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_04_action41.png)
+
+![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_04_action42.png)
 
 
 ### 1.8、option标签 ###
@@ -619,6 +621,10 @@ form:checkbox在渲染成input标签里会变成2个表单元素，这样可以�
 运行结果：
 
 http://localhost:8080/bar04/action51
+
+![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_04_action51.png)
+
+![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_04_action52.png)
 
 
 ### 1.9、options标签 ###
@@ -704,6 +710,10 @@ http://localhost:8080/bar04/action51
 通过这个方式实现了一个请选择标签，运行结果如下：
 
 http://localhost:8080/bar04/action61
+
+![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_04_action61.png)
+
+![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_04_action62.png)
 
 
 上面的这个例子同时使用了option标签和options标签。这两个标签生成的HTML代码是相同的，但是第一个option标签允许你在JSP中明确声明这个标签的值只供显示使用，并不绑定到表单支持对象的属性上。
@@ -795,9 +805,9 @@ http://localhost:8080/bar04/action61
 
 运行结果：
 
+![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_04_action71.png)
 
-
-
+![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_04_action72.png)
 
 隐藏域用于保持页面状态。
 
@@ -884,6 +894,10 @@ radiobuttons将生成一组单选框，只允许多个中选择1个；checkboxs�
 
 运行结果如下：
 
+![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_04_action81.png)
+
+![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_04_action82.png)
+
 
 二、视图解析器
 ----------
@@ -925,15 +939,9 @@ id就是逻辑名称了，在使用时可以在请求处理方法中这样指定
 
 从配置可以看出最终还是使用InternalResourceView完成了视图解析。
 
-
-
 - ResourceBundleViewResolver：它使用了ResourceBundle定义下的bean，实现了ViewResolver接口，指定了绑定包的名称。通常情况下，配置文件会定义在classpath下的properties文件中，默认的文件名字是views.properties。
 
-
-
 - UrlBasedViewResolver：它简单实现了ViewResolver接口，它不用显式定义，直接影响逻辑视图到URL的映射。它让你不用任何映射就能通过逻辑视图名称访问资源。它是对ViewResolver的一种简单实现，而且继承了AbstractCachingViewResolver，主要就是提供的一种拼接URL的方式来解析视图，它可以让我们通过prefix属性指定一个指定的前缀，通过suffix属性指定一个指定的后缀，然后把返回的逻辑视图名称加上指定的前缀和后缀就是指定的视图URL了。如prefix=/WEB-INF/views/，suffix=.jsp，返回的视图名称viewName=bar/index，则UrlBasedViewResolver解析出来的视图URL就是/WEB-INF/views/bar/index.jsp。redirect:前缀表示重定向，forword:前缀表示转发。使用UrlBasedViewResolver的时候必须指定属性viewClass，表示解析成哪种视图，一般使用较多的就是InternalResourceView，利用它来展现jsp，但是当我们使用JSTL的时候我们必须使用org.springframework.web.servlet.view.JstlView。
-
-
 
 - InternalResourceViewResolver：内部视图解析器。它是URLBasedViewResolver的子类，所以URLBasedViewResolver支持的特性它都支持。在实际应用中InternalResourceViewResolver也是使用的最广泛的一个视图解析器。
 
@@ -954,11 +962,7 @@ id就是逻辑名称了，在使用时可以在请求处理方法中这样指定
 	    <property name="suffix" value=".jsp"/>
 	</bean>
 
-
-
 - VelocityViewResolver：Velocity视图解析器，UrlBasedViewResolver的子类，VelocityViewResolver会把返回的逻辑视图解析为VelocityView。
-
-
 
 - FreeMarkerViewResolver：FreeMarker视图解析器，UrlBasedViewResolver的子类，FreeMarkerViewResolver会把Controller处理方法返回的逻辑视图解析为FreeMarkerView，使用FreeMarkerViewResolver的时候不需要我们指定其viewClass，因为FreeMarkerViewResolver中已经把viewClass为FreeMarkerView了。Spring本身支持了对Freemarker的集成。只需要配置一个针对Freemarker的视图解析器即可。
 
@@ -1245,11 +1249,11 @@ ftl.html页面内容如下：
 
 当请求 http://localhost:8080/foo04/ftl 时运行结果如下：
 
-
+![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_04_action91.png)
 
 当请求 http://localhost:8080/foo04/jstl  时运行结果如下：
 
-
+![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_04_action92.png)
 
 #### 2.3.5、小结 ####
 
@@ -1276,29 +1280,19 @@ ftl.html页面内容如下：
 #### 3.1.2、修改层面信息 ####
 在项目上右键选择属性，再选择“Project Facets”，先设置java运行环境为1.7，先去掉"Dynamic Web Module"前的勾，然后保存关闭；再打开勾选上"Dynamic Web Module"，版本选择“3.0”；这里在左下解会出现一个超链接，创建“Web Content”，完成关闭。
 
-
-
 #### 3.1.3、修改项目的部署内容 ####
 项目上右键属性，选择“Deplyment Assembly”,删除不需要发布的内容如：带“test”的两个目录，WebContent目录，再添加一个main下的webapp目录。
 
- 
-
 修改后的结果如下所示：
-
-
 
 #### 3.1.4、修改项目内容。####
 将WebContent下的内容复制到/src/main/webapp下，再删除WebContent目录。
 
 修改后的目录结构如下：
 
-
-
 #### 3.1.5、添加“服务器运行时（Server Runtime）” ####
 
 当然如果选择直接依赖Servlet与jsp的jar包，则这一步可以跳过，添加后的结果如下：
-
-
 
 ### 3.2、添加依赖 ###
 
@@ -2003,9 +1997,9 @@ ftl.html页面内容如下：
 	</body>
 	</html>
 
- 运行结果如下：
+运行结果如下：
 
-
+![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_04_action93.png)
 
 搜索：
 
@@ -2091,6 +2085,7 @@ ftl.html页面内容如下：
 
 运行结果：
 
+![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_04_action94.png)
 
 ### 3.8、编辑产品 ###
 
@@ -2172,6 +2167,7 @@ ftl.html页面内容如下：
 
 这里要注意路径问题使用c:url不能嵌套在form标签中，所以使用了${ctx}，运行结果如下：
 
+![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_04_action95.png)
 
 完成整个功能后的控制器代码如下：
 
