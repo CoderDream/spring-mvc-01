@@ -83,7 +83,8 @@ Spring MVC 学习总结（四）——视图与综合示例
 |htmlEscape|接受true或者false，表示是否应该对被渲染的值进行HTML转义。 |
 |cssErrorClass|定义要应用到被渲染input元素的CSS类，如果bound属性中包含错误，则覆盖cssClass属性值。|
 
-###1.3、form标签与input标签 ###
+
+### 1.3、form标签与input标签 ###
 
 这个标签会生成HTML form标签，同时为form内部所包含的标签提供一个绑定路径（binding path)。 它把命令对象（command object)存在PageContext中，这样form内部的标签就可以使用这个对象了。标签库中的其他标签都声明在form标签的内部。
 
