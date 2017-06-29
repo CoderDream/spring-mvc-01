@@ -34,7 +34,7 @@
 		function addPdts_click1() {
 			$.ajax({
 				type : "POST", //请求谓词类型
-				url : "bar/action21",
+				url : "bar03/action21",
 				data : JSON.stringify(products), //将products对象转换成json字符串
 				contentType : "application/json;charset=UTF-8", //发送信息至服务器时内容编码类型，(默认: "application/x-www-form-urlencoded")
 				dataType : "text", //预期服务器返回的数据类型
@@ -47,7 +47,7 @@
 		function addPdts_click2() {
 			$.ajax({
 				type : "POST", //请求谓词类型
-				url : "bar/action22",
+				url : "bar03/action22",
 				data : JSON.stringify(products), //将products对象转换成json字符串
 				contentType : "application/json;charset=UTF-8", //发送信息至服务器时内容编码类型，(默认: "application/x-www-form-urlencoded")
 				dataType : "json", //预期服务器返回的数据类型

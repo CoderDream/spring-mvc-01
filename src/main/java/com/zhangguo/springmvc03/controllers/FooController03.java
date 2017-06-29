@@ -85,6 +85,18 @@ public class FooController03 {
 		model.addAttribute("message", id);
 		return "foo/index";
 	}
+	
+    // 重定向
+    @RequestMapping("/action2a")
+    public String action2(Model model) {
+        return "foo/index";
+    }
+
+    @RequestMapping("/action3a")
+    public String action3(Model model) {
+        model.addAttribute("message", "action3Message");
+        return "redirect:action2a";
+    }
 
 	// 2重定向
 	@RequestMapping("/action2")
