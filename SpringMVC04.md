@@ -98,7 +98,7 @@ commandName与modelAttribute功能基本一样，使用modelAttribute就可以�
 
 如果在页面中使用form不设置任意属性<form:form/>，解析后的结果如下：
 
-	<form id="command" action="/SpringMVC04/bar/action11" method="post"></form>
+	<form id="command" action="/bar04/action11" method="post"></form>
 
 新建一个控制器，在控制器中添加一个action，代码如下：
 
@@ -109,7 +109,7 @@ commandName与modelAttribute功能基本一样，使用modelAttribute就可以�
 	import com.zhangguo.springmvc04.entities.Product;
 	
 	@Controller
-	@RequestMapping("/bar")
+	@RequestMapping("/bar04")
 	public class BarController {
 	    @RequestMapping("/action11")
 	    public String action11(Model model){
@@ -119,7 +119,7 @@ commandName与modelAttribute功能基本一样，使用modelAttribute就可以�
 	    }
 	}
 
-在views/bar目录下添加action11.jsp页面，页面内容如下：
+在views/bar04目录下添加action11.jsp页面，页面内容如下：
 
 	<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -153,7 +153,7 @@ form表单与模型中名称为product的对象进行绑定，form中的表单�
 	<title>bar/action11</title>
 	</head>
 	<body>
-	    <form id="product" action="/SpringMVC04/bar/action11" method="post">
+	    <form id="product" action="/bar04/action11" method="post">
 	        <p>
 	            <label for="name">名称：</label>
 	            <input id="name" name="name" type="text" value="Meizu note1"/>
