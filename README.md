@@ -37,53 +37,74 @@ Spring MVC 学习总结（二）——控制器定义与@RequestMapping详解
 http://www.cnblogs.com/best/p/5659596.html
 
  二、@RequestMapping详解
-2.1、value 属性指定映射路径或URL模板
+----------
+
+### 2.1、value 属性指定映射路径或URL模板 ###
+
+http://localhost:8080/foo
 
 ![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_0202.png)
 
+http://localhost:8080/bar
+
 ![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_0203.png)
 
-2.1.1、指定具体路径字符
+#### 2.1.1、指定具体路径字符 ####
+
+http://localhost:8080/action1
 
 ![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_0204.png)
 
-2.1.2、路径变量占位，URI模板模式
+#### 2.1.2、路径变量占位，URI模板模式 ####
+
+http://localhost:8080/action3/1/2
 
 ![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_0205.png)
 
-2.1.3、正则表达式模式的URI模板
+#### 2.1.3、正则表达式模式的URI模板 ####
+
+http://localhost:8080/action4/995103-tom
 
 ![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_0206.png)
 
-2.1.4、矩阵变量@MatrixVariable
+#### 2.1.4、矩阵变量@MatrixVariable ####
 
 ![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_0207.png)
 
-2.1.5、Ant风格路径模式
+#### 2.1.5、Ant风格路径模式 ####
+
+http://localhost:8080/action6/ant.do
 
 ![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_0208.png)
 
-2.2、method属性指定谓词类型
+### 2.2、method属性指定谓词类型 ###
+
+http://localhost:8080/action7
 
 ![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_0209.png)
 
-2.3、consumes属性指定请求的Content-Type
+### 2.3、consumes属性指定请求的Content-Type ###
+
+http://localhost:8080/action8
 
 ![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_0210.png)
 
-2.4、produces属性指定响应的Content-Type
+### 2.4、produces属性指定响应的Content-Type ###
+
+http://localhost:8080/home/action8
 
 ![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_0211.png)
 
-2.5、params属性指定请求中必须有特定参数与值
+### 2.5、params属性指定请求中必须有特定参数与值 ###
+
+http://localhost:8080/home/action9
 
 ![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_0212.png)
 
-2.6、headers属性指定请求中必须有特定header值
+### 2.6、headers属性指定请求中必须有特定header值 ###
 
 
-
-2.7、name属性指定名称
+### 2.7、name属性指定名称 ###
 
 ![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_0213.png)
 

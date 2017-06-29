@@ -24,14 +24,14 @@ public class FooController03 {
 	@RequestMapping("/action0")
 	public String action0(Model model, int id, String name) {
 		model.addAttribute("message", "name=" + name + ",id=" + id);
-		return "foo/index";
+		return "foo03/index";
 	}
 
 	// 自动参数映射 自定义数据类型
 	@RequestMapping("/action01")
 	public String action01(Model model, Product product) {
 		model.addAttribute("message", product);
-		return "foo/index";
+		return "foo03/index";
 	}
 
 	// 自动参数映射 复杂数据类型
@@ -39,7 +39,7 @@ public class FooController03 {
 	public String action02(Model model, User user) {
 		model.addAttribute("message",
 				user.getUsername() + "," + user.getProduct().getName());
-		return "foo/index";
+		return "foo03/index";
 	}
 
 	// 集合类型
@@ -52,7 +52,7 @@ public class FooController03 {
 		} else {
 			System.out.println("products is null!!!");
 		}
-		return "foo/index";
+		return "foo03/index";
 	}
 
 	// Map类型
@@ -60,14 +60,14 @@ public class FooController03 {
 	public String action04(Model model, ProductMap map) {
 		model.addAttribute("message",
 				map.getItems().get("p1") + "<br/>" + map.getItems().get("p2"));
-		return "foo/index";
+		return "foo03/index";
 	}
 
 	// List集合与数组类型
 	@RequestMapping("/action05")
 	public String action05(Model model, @RequestParam("u") List<String> users) {
 		model.addAttribute("message", users.get(0) + "," + users.get(1));
-		return "foo/index";
+		return "foo03/index";
 	}
 
 	// List集合与数组类型
@@ -83,13 +83,13 @@ public class FooController03 {
 	public String action1(Model model,
 			@RequestParam(required = false, defaultValue = "99") int id) {
 		model.addAttribute("message", id);
-		return "foo/index";
+		return "foo03/index";
 	}
 	
     // 重定向
     @RequestMapping("/action2a")
     public String action2(Model model) {
-        return "foo/index";
+        return "foo03/index";
     }
 
     @RequestMapping("/action3a")
@@ -103,7 +103,7 @@ public class FooController03 {
 	public String action2(Model model, Product product) {
 		model.addAttribute("message", product);
 		System.out.println(model.containsAttribute("product")); // true
-		return "foo/index";
+		return "foo03/index";
 	}
 
 	// 重定向属性
@@ -124,7 +124,7 @@ public class FooController03 {
 
 	@RequestMapping("/action5")
 	public String action5(Model model) {
-		return "foo/action5";
+		return "foo03/action5";
 	}
 
 	@RequestMapping("/action6")
@@ -132,7 +132,7 @@ public class FooController03 {
 			@ModelAttribute(name = "product", binding = true) Product entity) {
 		model.addAttribute("message",
 				model.containsAttribute("product") + "<br/>" + entity);
-		return "foo/index";
+		return "foo03/index";
 	}
 
 	@RequestMapping("/action7")
@@ -141,7 +141,7 @@ public class FooController03 {
 		for (String key : map.keySet()) {
 			System.out.println(key + "：" + map.get(key));
 		}
-		return "foo/index";
+		return "foo03/index";
 	}
 
 	@ModelAttribute
