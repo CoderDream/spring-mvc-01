@@ -243,9 +243,11 @@ ValidationUtils是一个工具类，中间有一些方可以用于判断内容�
 
 ### 1.4、测试运行 ###
 
+![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_05_0101.png)
 
 控制台输出：
 
+![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_05_0102.png)
 
 
 二、JSR303验证器
