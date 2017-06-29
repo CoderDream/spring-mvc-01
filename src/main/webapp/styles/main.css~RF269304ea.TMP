@@ -103,7 +103,3 @@ a.out,input.out {
 form{
 	margin:10px 0;
 }
-span.error
-{
-	color:red;
-}

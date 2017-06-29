@@ -1,10 +1,10 @@
-package com.zhangguo.springmvc04.services;
+package com.zhangguo.springmvc51.services;
 
 import java.util.List;
 
-import com.zhangguo.springmvc04.entities.Product;
+import com.zhangguo.springmvc51.entities.Product;
 
-public interface ProductService {
+public interface ProductService02 {
 
 	/*
 	 * 获得所有的产品
@@ -24,12 +24,12 @@ public interface ProductService {
 	/**
 	 * 新增产品对象
 	 */
-	void addProduct(Product enttiy) throws Exception;
+	void addProduct(Product enttiy);
 	
 	/**
 	 * 更新产品对象
 	 */
-	public void updateProduct(Product entity) throws Exception;
+	public void updateProduct(Product entity);
 
 	/**
 	 * 删除产品对象

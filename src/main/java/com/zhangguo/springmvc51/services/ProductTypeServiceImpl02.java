@@ -1,13 +1,13 @@
-package com.zhangguo.springmvc04.services;
+package com.zhangguo.springmvc51.services;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
-import com.zhangguo.springmvc04.entities.ProductType;
+import com.zhangguo.springmvc51.entities.ProductType;
 
 @Service
-public class ProductTypeServiceImpl implements ProductTypeService {
+public class ProductTypeServiceImpl02 implements ProductTypeService02 {
 
 	private static List<ProductType> productTypes;
 

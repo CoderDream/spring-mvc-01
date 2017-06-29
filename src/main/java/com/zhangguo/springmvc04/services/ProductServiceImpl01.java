@@ -6,11 +6,11 @@ import org.springframework.stereotype.Service;
 import com.zhangguo.springmvc04.entities.Product;
 
 @Service
-public class ProductServiceImpl implements ProductService {
+public class ProductServiceImpl01 implements ProductService01 {
 	private static List<Product> products;
 
 	static {
-		ProductTypeService productTypeService = new ProductTypeServiceImpl();
+		ProductTypeService01 productTypeService = new ProductTypeServiceImpl01();
 		products = new ArrayList<Product>();
 		products.add(new Product(198, "Huwei P8", 4985.6, productTypeService.getProductTypeById(11)));
 		products.add(new Product(298, "李宁运动鞋", 498.56, productTypeService.getProductTypeById(21)));

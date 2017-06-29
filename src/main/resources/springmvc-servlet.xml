@@ -96,5 +96,10 @@
 		</property>
 	</bean>
 
+	<!--文件上传解析器 -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.support.StandardServletMultipartResolver">
+	</bean>
+	
 	<bean name="/foo" class="com.zhangguo.springmvc02.controllers.FooController02"></bean>
 </beans>

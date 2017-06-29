@@ -8,7 +8,7 @@ import com.zhangguo.springmvc04.entities.ProductType;
  * 产品类型服务
  *
  */
-public interface ProductTypeService {
+public interface ProductTypeService01 {
 	/**
 	 * 根据产品类型编号获得产品类型对象
 	 */

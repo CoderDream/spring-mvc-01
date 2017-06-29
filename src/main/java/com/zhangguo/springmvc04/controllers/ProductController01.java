@@ -7,18 +7,18 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.zhangguo.springmvc04.entities.Product;
-import com.zhangguo.springmvc04.services.ProductService;
-import com.zhangguo.springmvc04.services.ProductTypeService;
+import com.zhangguo.springmvc04.services.ProductService01;
+import com.zhangguo.springmvc04.services.ProductTypeService01;
 
 @Controller
-@RequestMapping
-public class ProductController {
+@RequestMapping("/product01")
+public class ProductController01 {
 	
 	@Autowired
-	ProductService productService;
+	ProductService01 productService;
 	
 	@Autowired
-	ProductTypeService productTypeService;
+	ProductTypeService01 productTypeService;
 
 	// 展示与搜索action
 	@RequestMapping
@@ -26,7 +26,7 @@ public class ProductController {
 		model.addAttribute("products",
 				productService.getProductsByName(searchKey));
 		model.addAttribute("searchKey", searchKey);
-		return "product/index";
+		return "product01/index";
 	}
 
 	// 删除，id为路径变量
@@ -51,7 +51,7 @@ public class ProductController {
 		// 用于生成下拉列表
 		model.addAttribute("productTypes",
 				productTypeService.getAllProductTypes());
-		return "product/add";
+		return "product01/add";
 	}
 
 	// 新增保存，如果新增成功转回列表页，如果失败回新增页，保持页面数据
@@ -71,7 +71,7 @@ public class ProductController {
 					productTypeService.getAllProductTypes());
 			// 错误消息
 			model.addAttribute("message", exp.getMessage());
-			return "product/add";
+			return "product01/add";
 		}
 	}
 
@@ -83,7 +83,7 @@ public class ProductController {
 		// 用于生成下拉列表
 		model.addAttribute("productTypes",
 				productTypeService.getAllProductTypes());
-		return "product/edit";
+		return "product01/edit";
 	}
 
 	// 编辑后保存，如果更新成功转回列表页，如果失败回编辑页，保持页面数据
@@ -103,7 +103,7 @@ public class ProductController {
 					productTypeService.getAllProductTypes());
 			// 错误消息
 			model.addAttribute("message", exp.getMessage());
-			return "product/edit";
+			return "product01/edit";
 		}
 	}
 }

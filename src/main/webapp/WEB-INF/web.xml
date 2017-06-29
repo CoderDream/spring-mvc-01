@@ -17,6 +17,12 @@
 		</init-param>
 		<!-- 启动顺序，数字越小，启动越早 -->
 		<load-on-startup>1</load-on-startup>
+		<!--Servlet3.0以上文件上传配置 -->
+		<multipart-config>
+			<max-file-size>5242880</max-file-size><!--上传文件的最大限制5MB -->
+			<max-request-size>20971520</max-request-size><!--请求的最大限制20MB -->
+			<file-size-threshold>0</file-size-threshold><!--当文件的大小超过临界值时将写入磁盘 -->
+		</multipart-config>
 	</servlet>
 
 	<!--所有请求都会被springmvc拦截 -->
