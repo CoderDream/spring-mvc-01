@@ -192,7 +192,11 @@ input元素可以设置其它的属性，如前面提到的通用属性，修改
         <input id="name" name="name" class="textCss" style="color:blue" a="b" type="text" value="Meizu note1<hr/>"/>
     </p>
  
-默认从服务器发送到客户端的数据中是会编码的，如示例中<hr/>，会解析成&lt;hr&gt;，但我们设置属性htmlEscape="false"结果原样输出；我们在标签中设置a="b"原样解析出来，这里给开发者留了很大的空间，如想使用原input标签的属性都可以直接写。
+默认从服务器发送到客户端的数据中是会编码的，如示例中
+
+	<hr/>
+
+会解析成&lt;hr&gt;，但我们设置属性htmlEscape="false"结果原样输出；我们在标签中设置a="b"原样解析出来，这里给开发者留了很大的空间，如想使用原input标签的属性都可以直接写。
 
 ### 1.4、checkbox标签 ###
 
