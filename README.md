@@ -804,7 +804,9 @@ ModelAndView有个多构造方法重载，单独设置属性也很方便，运�
 使用String,ModelAndView返回视图名称可以不受请求的url绑定，ModelAndView可以设置返回的视图名称。
 
 另外在非MVC中使用的许多办法在Action也可以使用。
-.
+
+
+
 
 
 

@@ -1,0 +1,2 @@
+name:${name}
+price:${price}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>FreeMarker View</title>
+</head>
+<body>
+<h2>${msg}</h2>
+<ul>
+  <#list users as user>
+    <li>
+       ${user_index+1} 、 ${user}
+       <#if user_has_next><hr/></#if>
+    </li>
+  </#list>
+</ul>
+</body>
+</html>

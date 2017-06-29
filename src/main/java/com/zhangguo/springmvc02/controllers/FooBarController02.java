@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping
-public class FooBarController {
+@RequestMapping("/foobar02")
+public class FooBarController02 {
 	@RequestMapping("/action1")
 	public String action1(Model model) {
 		// 在模型中添加属性message值为action1，渲染页面时使用
