@@ -119,6 +119,11 @@ public class BarController03 {
 	public int action38() {
 		return 9527;
 	}
+	
+	@RequestMapping("/action39a")
+	public Product action39a() {
+		return new Product(1, "iPhone", 1980.5);
+	}
 
 	@RequestMapping("/action39")
 	@ResponseBody

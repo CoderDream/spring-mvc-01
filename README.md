@@ -91,14 +91,9 @@ http://www.cnblogs.com/best/p/5659596.html
 
 ![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_0214.png)
 
-
-
-
-
-
 http://127.0.0.1:8080/foo03/action0?id=9527&id&name=star
 
-
+![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_03_action00.png)
 
 http://127.0.0.1:8080/foo03/action01?id=1&name=toy&price=99
 
@@ -113,9 +108,7 @@ http://127.0.0.1:8080/foo03/action02?username=tom&product.name=book
 	    <button>提交</button>
 	</form>
 
-
-
-
+![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_03_action02.png)
 
 
 1.1.4、List集合类型
@@ -141,7 +134,7 @@ http://127.0.0.1:8080/foo03/action02?username=tom&product.name=book
 
 http://localhost:8080/foo03/action03?items[0].name=phone&items[1].name=book
 
-
+![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_03_action03.png)
 
 
 1.1.5、Map集合类型
@@ -161,7 +154,7 @@ http://localhost:8080/foo03/action04?items[p1].name=pen&items[p2].name=box
 
 运行结果：
 
-
+![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_03_action04.png)
 
 默认值
 ----------
@@ -179,10 +172,11 @@ http://localhost:8080/foo03/action04?items[p1].name=pen&items[p2].name=box
 
 http://localhost:8080/foo03/action1?id=98
 
+![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_03_action03c.png)
 
 http://localhost:8080/foo03/action1
 
-
+![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_03_action03b.png)
 
 1.2.2、List与数组绑定基本数据类型
 ----------
@@ -197,16 +191,13 @@ http://localhost:8080/foo03/action1
         return "foo/index";
     }
 
-
 运行结果：
 
 http://localhost:8080/foo03/action05?u=tom&u=rose
 
-
-
+![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_03_action05.png)
 
 使用表单同样可行，页面脚本如下：
-
 
 	<form action="bar/action11" method="post">
 	    <p>
@@ -218,10 +209,7 @@ http://localhost:8080/foo03/action05?u=tom&u=rose
 	    <button>提交</button>
 	</form>
 
-
 请求处理方法action代码如下：
-
-
 
     // List与数组绑定基本数据类型
     @RequestMapping("/action11")
@@ -233,7 +221,9 @@ http://localhost:8080/foo03/action05?u=tom&u=rose
 
 运行结果：
 
-
+![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_03_action11a.png)
+ 
+![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_03_action11b.png)
 
 
 1.2.3、List与数组直接绑定自定义数据类型与AJAX
@@ -275,11 +265,9 @@ b)、pom.xml，添加jackson依赖，添加依赖的配置内容如下：
         <version>2.5.2</version>
     </dependency>
 
-
 c)、ajax请求时需要设置属性dataType 为 json，contentType 为 'application/json;charse=UTF-8'，data 转换成JSON字符串，如果条件不满足有可能会出现415异常。
 
 Action定义的示例代码如下：
-
 
     // List与数组直接绑定自定义数据类型与AJAX
     @RequestMapping("/action21")
@@ -289,9 +277,7 @@ Action定义的示例代码如下：
         response.getWriter().write("添加成功");
     }
 
-
 action21的参数@RequestBody List<Product> products是接收从客户端发送到服务器的产品集合，默认的请求内容并非是application/json，而是：application/x-www-form-urlencoded，在参数前增加@RequestBody的作用是让Spring MVC在收到客户端请求时将选择合适的转换器将参数转换成相应的对象。action22的返回值为List<Product>，且在方法上有一个注解@ResponseBody，系统会使用jackson将该对象自动序列化成json字符；在客户端请求时设置内容类型为application/json，定义一个myform21.jsp页面，页面的脚本如下所示：
-
 	
 	<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -365,7 +351,7 @@ action21的参数@RequestBody List<Product> products是接收从客户端发送�
 
 点击按钮1时的运行结果如下：
 
-
+ ![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_03_action21a.png)
 
 控制台输出：
 
@@ -373,7 +359,7 @@ action21的参数@RequestBody List<Product> products是接收从客户端发送�
 
 点击按钮2时的运行结果如下：
 
-
+ ![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_03_action21b.png)
 
 1.3、重定向与Flash属性
 ----------
@@ -396,10 +382,9 @@ action21的参数@RequestBody List<Product> products是接收从客户端发送�
 
 当请求 http://localhost:8080/foo03/action3a 时运行结果如下：
 
-
+ ![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_03_action22b.png)
 
 在action3中返回的结果为redirect:action2，则表示重定向到action2这个请求处理方法，所有重定向都是以当前路径为起点的，请注意路径。在action3向model中添加了名称message的数据，因为重定向到action2中会发起2次请求，为了保持action3中的数据Spring MVC自动将数据重写到了url中。为了实现重定向时传递复杂数据，可以使用Flash属性，示例代码如下：
-
 
     // 接收重定向参数
     @RequestMapping("/action2")
@@ -420,7 +405,7 @@ action21的参数@RequestBody List<Product> products是接收从客户端发送�
 
 当访问action3时，首先创建了一个product产口对象，将该对象添加到了Flash属性中，在重定向后取出，个人猜测应该暂时将对象存入了Session中。当请求foo03/action3时运行结果如下：
 
-
+ ![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_03_action22a.png)
 
 url地址已经发生了变化，product对象其实也已经被存入了model中，在action的视图中可以直接拿到。
 
@@ -442,20 +427,17 @@ url地址已经发生了变化，product对象其实也已经被存入了model�
         return "foo/index";
     }
 
-
- http://localhost:8080/foo03/action6?id=6&name=pen&price=15.8
+http://localhost:8080/foo03/action6?id=6&name=pen&price=15.8
 
 运行结果：
 
-
+ ![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_03_action26.png)
 
 其实不使用@ModelAttribute我也样可以完成参数与对象间的自支映射，但使用注解可以设置更多详细内容，如名称，是否绑定等。
 
 ### 1.4.2、注解在方法上 ###
 
-
 用于标注一个非请求处理方法，通俗说就是一个非Action，普通方法。如果一个控制器类有多个请求处理方法，以及一个有@ModelAttribute注解的方法，则在调用其它Action时会先调用非请求处理的Action，示例代码如下：
-
 
     @RequestMapping("/action7")
     public String action7(Model model) {
@@ -473,24 +455,11 @@ url地址已经发生了变化，product对象其实也已经被存入了model�
         return message;
     }
 
-
- 
-
 当访问http://localhost:8080/foo03/action7时，控制台显示结果如下：
 
-
+ ![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_03_action27.png)
 
 非请求处理方法可以返回void，也可以返回一个任意对象，该对象会被自动添加到每一个要被访问的Action的Model中，key从示例中可以看出为类型名称。
-
-
-
-
-
-
-
-
-
-
 
 二、Action返回值类型
 ----------
@@ -568,7 +537,7 @@ url地址已经发生了变化，product对象其实也已经被存入了model�
 
 运行结果：
 
-
+ ![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_03_action28.png)
 
 小结：主要是借助了标签<c:url value="/images/3.jpg"></c:url>，将路径转换成“绝对路径”；建议在引用外部资源如js、css、图片信息时都使用该标签解析路径。
 
@@ -587,9 +556,7 @@ url地址已经发生了变化，product对象其实也已经被存入了model�
         return "bar03/action31";
     }
 
-
 Spring MVC的配置文件内容如下：
-
 
     <!-- 视图解析器 -->
     <bean
@@ -606,7 +573,7 @@ Spring MVC的配置文件内容如下：
 
 http://localhost:8080/bar03/action31
 
-
+ ![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_03_action31.png)
 
 ### 2.2.2、String作为内容输出 ###
 如果方法声明了注解@ResponseBody ，将内容或对象作为 HTTP 响应正文返回，并调用适合HttpMessageConverter的Adapter转换对象，写入输出流。些时的String不再是路径而是内容，示例脚本如下：
@@ -618,12 +585,11 @@ http://localhost:8080/bar03/action31
         return "not <b>path</b>,but <b>content</b>";
     }
 
-
 http://localhost:8080/bar03/action32
 
 测试运行结果：
 
-
+ ![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_03_action32.png)
 
 ### 2.3、返回值为void ###
 
@@ -644,6 +610,7 @@ void在普通方法中是没有返回值的意思，但作为请求处理方法�
         return "bar03/action33";  //bar03是控制器的路径
     }
 
+ ![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_03_action33.png)
 
 可见URL= prefix前缀+控制器路径+方法名称 +suffix后缀组成。
 
@@ -660,7 +627,7 @@ void在普通方法中是没有返回值的意思，但作为请求处理方法�
 
 运行结果如下：
 
-
+ ![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_03_action34.png)
 
  可以看到h2标签并未渲染成标题。
 
@@ -696,7 +663,7 @@ http://localhost:8080/bar03/action35
 
 ModelAndView有个多构造方法重载，单独设置属性也很方便，运行结果如下：
 
-
+ ![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_03_action35.png)
 
 ### 2.5、返回值为Map ###
 
@@ -711,9 +678,9 @@ ModelAndView有个多构造方法重载，单独设置属性也很方便，运�
         return model;
     }
 
- 
-
 实际访问的路径是：/WEB-INF/views/bar03/action36.jsp，返回给客户端的map相当于模型，在视图中可以取出。
+
+ ![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_03_action36.png)
 
 ### 2.6、返回值为任意类型 ###
 
@@ -729,6 +696,8 @@ ModelAndView有个多构造方法重载，单独设置属性也很方便，运�
 
 测试运行的结果是：exception is java.lang.IllegalArgumentException: Unknown return value type异常。
 
+ ![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_03_action37.png)
+
 如果确实需要直接将基本数据类型返回，则可以使用注解@ReponseBody。
 
     @RequestMapping("/action38")
@@ -740,7 +709,7 @@ ModelAndView有个多构造方法重载，单独设置属性也很方便，运�
 
 运行结果：
 
-
+ ![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_03_action38.png)
 
 #### 2.6.2、当返值为自定义类型 ####
 
@@ -755,7 +724,7 @@ ModelAndView有个多构造方法重载，单独设置属性也很方便，运�
 
 如果存在action39对应的视图，页面还是可以正常显示。
 
-
+ ![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_03_action39a.png)
 
 如果在action上添加@ResponseBody注解则返回的是Product本身，而非视图，Spring会选择一个合适的方式解析对象，默认是json。示例代码如下：
 
@@ -768,7 +737,7 @@ ModelAndView有个多构造方法重载，单独设置属性也很方便，运�
 
 运行结果：
 
- 
+ ![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_03_action39.png)
 
 如果是接收json值，则需要使用注解@RequestBody指定在相应参数上。
 
@@ -786,7 +755,7 @@ ModelAndView有个多构造方法重载，单独设置属性也很方便，运�
 
 运行结果：
 
- 
+ ![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_03_action40.png)
 
 返回的类型还有许多如view等，通过view可指定一个具体的视图，如下载Excel、Pdf文档，其实它们也修改http的头部信息，手动同样可以实现，如下代码所示：
 
@@ -802,7 +771,7 @@ ModelAndView有个多构造方法重载，单独设置属性也很方便，运�
 
 运行结果：
 
-
+![](https://raw.githubusercontent.com/CoderDream/spring-mvc-01/master/snapshot/spring_mvc_03_action41.png)
 
 2.8、小结
 ----------
