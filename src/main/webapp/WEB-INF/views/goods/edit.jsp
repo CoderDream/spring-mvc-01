@@ -10,6 +10,8 @@
 	rel="stylesheet" />
 <title>编辑商品</title>
 <base href="<c:url value="/" />" />
+<script
+	src="${pageContext.request.contextPath}/scripts/jQuery1.11.3/jquery-1.11.3.js"></script>
 </head>
 <body>
 	<div class="main">
@@ -25,6 +27,7 @@
 					<form:errors path="name" cssClass="error"></form:errors>
 				</p>
 				<p>
+					<c:if test="${1==1}">XXXXX</c:if>
 					<label for="price">商品价格：</label>
 					<form:input path="price" />
 					<form:errors path="price" cssClass="error"></form:errors>
